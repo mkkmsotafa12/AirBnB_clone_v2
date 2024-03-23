@@ -19,10 +19,10 @@ def hbnb():
 
 
 @app.route("/c/<text>", strict_slashes=False)
-def admin(tx):
+def admin(text):
     """ Display 'C' followed by the value """
-    tx = tx.replace('_', ' ')
-    return f"C {escape(tx)}"
+    text = text.replace('_', ' ')
+    return f"C {escape(text)}"
 
 
 if __name__ == '__main__':
