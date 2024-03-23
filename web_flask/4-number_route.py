@@ -41,6 +41,7 @@ def admin_py(text=None):
 def num(n):
     """ return a number page """
     try:
+        int(n)
         return f"{n} is a number"
     except ValueError:
         return abort(404)
