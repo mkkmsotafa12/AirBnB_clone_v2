@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" script that starts a Flask web application """
+""" script that setup web app """
 from flask import Flask
 from markupsafe import escape
+
 
 app = Flask(__name__)
 
@@ -25,10 +26,10 @@ def admin(text):
     return f"C {escape(text)}"
 
 
-@app.route("/python/<text>", strict_sashes=False)
-@app.route("/python", strict_salshes=False)
+@app.route("/python/<text>", strict_slashes=False)
+@app.route("/python", strict_slashes=False)
 def admin_py(text=None):
-    """ display “Python ”, followed by the value """
+    """ display Python , followed by the value """
     if text:
         text = text.replace("_", " ")
         return f"Python {escape(text)}"
