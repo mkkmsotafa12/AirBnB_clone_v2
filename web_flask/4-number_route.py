@@ -40,11 +40,7 @@ def admin_py(text=None):
 @app.route("/number/<n>", strict_slashes=False)
 def num(n):
     """ return a number page """
-    try:
-        int(n)
-        return f"{n} is a number"
-    except ValueError:
-        return abort(404)
+    return ("{} is a number".format(n) if n.isdigit() else abort(404))
 
 
 if __name__ == '__main__':
