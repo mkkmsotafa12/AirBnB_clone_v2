@@ -37,10 +37,10 @@ def admin_py(text=None):
         return "Python is cool"
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def num(n):
     """ return a number page """
-    return ("{} is a number".format(n) if n.isdigit() else abort(404))
+    return "{} is a number".format(n)
 
 
 if __name__ == '__main__':
